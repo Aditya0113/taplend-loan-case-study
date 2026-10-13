@@ -2,6 +2,20 @@
 
 TapLend Loan Approval Case Study
 
-I looked at 634 approved loans to work out which new applicants TapLend should say yes to, and where the data makes that hard to answer with confidence.
+Analysis of 634 approved loans to decide which new applicants TapLend should approve.
 
-The task: use application data and loan outcomes (Good / Bad) from a six-month period to decide who should get a loan in the future, then discuss data problems, shortcomings of the analysis, and extra data that would help.
+Files
+analysis.ipynb: the full analysis
+chart_bad_rate.png: bad rate by pay frequency, FICO score and age
+
+The data file (AssessmentDataScientist.xlsx) is not included because it is company data with personal details.
+
+How to run
+Put AssessmentDataScientist.xlsx next to the notebook.
+Install the libraries: pip install pandas openpyxl scikit-learn matplotlib seaborn
+Run the notebook cells from top to bottom.
+Main findings
+55% of the matched loans went bad.
+Pay frequency, FICO retail score, age and direct deposit carried the most signal.
+Logistic regression reached AUC 0.665 in cross-validation, but 0.588 on a time-based test, so I treat it as a pilot-stage model.
+Everyone in the data was already approved, so declined applicants are missing (selection bias).
